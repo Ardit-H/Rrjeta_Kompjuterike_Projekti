@@ -18,6 +18,11 @@ def log_message(addr, msg):
     with open("messages_log.txt", "a") as f:
         f.write(f"[{time.ctime()}] {addr}: {msg}\n")
 
+    def check_timeouts():
+        while True:
+            time.sleep(10)
 
+
+now = time.time()
 
 
