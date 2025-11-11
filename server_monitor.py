@@ -1,3 +1,6 @@
+import time
+from server_setup import lock,clients
+
 def get_stats():
     with lock:
         lines = []
@@ -9,3 +12,9 @@ def get_stats():
             lines.append(f"{addr} -> msgs: {info['messages']}, "
                          f"bytes: {info['bytes']}, "
                          f"privilege: {info['privilege']}")
+
+        stats = "\n".join(lines)
+        print(stats)
+        with open("server_stats.txt", "w") as f:
+            f.write(stats)
+        return stats
