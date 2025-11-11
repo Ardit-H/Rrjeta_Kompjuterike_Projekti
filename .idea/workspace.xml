@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Add file deletion command with permission check and user notifications">
+      <change beforePath="$PROJECT_DIR$/server_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_core.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,39 @@
       <option name="project" value="LOCAL" />
       <updated>1762888352480</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add client activity tracking and message logging">
+      <option name="closed" value="true" />
+      <created>1762890197672</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762890197672</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Implement /list command to display available files">
+      <option name="closed" value="true" />
+      <created>1762890404846</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762890404846</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implement /read command with file existence check and partial read">
+      <option name="closed" value="true" />
+      <created>1762890600179</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762890600179</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add file deletion command with permission check and user notifications">
+      <option name="closed" value="true" />
+      <created>1762891491736</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762891491736</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +132,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Vazhdim ne server_setup.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vazhdim ne server_setup.py" />
+    <MESSAGE value="Add client activity tracking and message logging" />
+    <MESSAGE value="Implement /list command to display available files" />
+    <MESSAGE value="Implement /read command with file existence check and partial read" />
+    <MESSAGE value="Add file deletion command with permission check and user notifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add file deletion command with permission check and user notifications" />
   </component>
 </project>
