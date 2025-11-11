@@ -1,6 +1,7 @@
 import time
 from server_setup import lock,clients
 
+
 def get_stats():
     with lock:
         lines = []
