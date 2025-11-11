@@ -18,3 +18,9 @@ def handle_messages():
                 privilege = "admin" if len(clients) == 0 else "read"
                 clients[addr] = {"last_active": time.time(), "messages": 0, "bytes": 0, "privilege": privilege}
                 print(f"Klient i ri: {addr} (privilege: {privilege})")
+
+            clients[addr]['last_active'] = time.time()
+            clients[addr]['messages'] += 1
+            clients[addr]['bytes'] += len(data)
+
+            log_message(addr, msg)
