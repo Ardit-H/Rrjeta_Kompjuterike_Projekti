@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Implement /read command with file existence check and partial read">
+      <change beforePath="$PROJECT_DIR$/.idea/Rrjeta_Kompjuterike_Projekti.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Rrjeta_Kompjuterike_Projekti.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_core.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +40,6 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="356wjPXjyylPf0kwIwJQ5gCdxBO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

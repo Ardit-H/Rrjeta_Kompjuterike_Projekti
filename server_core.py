@@ -42,3 +42,12 @@ def handle_messages():
                 send_message(f"Përmbajtja e {filename}:\n{content}", addr)
             elif msg.startswith("/delete"):
                 if clients[addr]['privilege'] != "admin":
+                    send_message("Nuk ke privilegje për këtë komandë.", addr)
+                    continue
+
+                filename = msg.split(" ", 1)[1]
+                if os.path.exists(filename):
+                    os.remove(filename)
+                    send_message(f"File '{filename}' u fshi.", addr)
+                else:
+                    send_message("File nuk ekziston.", addr)
