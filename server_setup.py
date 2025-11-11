@@ -24,5 +24,11 @@ def log_message(addr, msg):
 
 
 now = time.time()
+with lock:
+    inactive = [addr for addr, info in clients.items() if now - info['last_active'] > TIMEOUT]
+    for addr in inactive:
+        print(f"Klienti {addr} u shkëput për shkak të inaktivitetit.")
+        del clients[addr]
+
 
 
