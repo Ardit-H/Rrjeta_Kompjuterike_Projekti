@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Vazhdimi i pjeses client_admin.py" />
+    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client_admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client_redonly.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server_core.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server_monitor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server_setup.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,22 +23,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Ardit-H&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Ardit-H"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Ardit-H/Rrjeta_Kompjuterike_Projekti.git&quot;,
-    &quot;accountId&quot;: &quot;5e6a43b1-b80c-40f8-93fb-ba81bf08b78e&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Ardit-H/Rrjeta_Kompjuterike_Projekti.git",
+    "accountId": "5e6a43b1-b80c-40f8-93fb-ba81bf08b78e"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
   <component name="ProjectId" id="356wjPXjyylPf0kwIwJQ5gCdxBO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,20 +48,13 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+    "git-widget-placeholder": "master"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+        <option value="bundled-python-sdk-14705d77f0bb-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.25659.43" />
       </set>
     </attachedChunks>
   </component>
@@ -69,29 +66,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762443963837</updated>
-      <workItem from="1762886361331" duration="1392000" />
     </task>
-    <task id="LOCAL-00001" summary="Fillimi i client_admin.py">
-      <option name="closed" value="true" />
-      <created>1762887444731</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1762887444731</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Vazhdimi i pjeses client_admin.py">
-      <option name="closed" value="true" />
-      <created>1762887666265</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1762887666265</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -103,10 +79,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fillimi i client_admin.py" />
-    <MESSAGE value="Vazhdimi i pjeses client_admin.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vazhdimi i pjeses client_admin.py" />
   </component>
 </project>
