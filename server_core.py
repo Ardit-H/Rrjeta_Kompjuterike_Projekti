@@ -51,3 +51,15 @@ def handle_messages():
                     send_message(f"File '{filename}' u fshi.", addr)
                 else:
                     send_message("File nuk ekziston.", addr)
+
+            elif msg.startswith("/search"):
+                keyword = msg.split(" ", 1)[1] if " " in msg else ""
+                files = [f for f in os.listdir(".") if keyword.lower() in f.lower()]
+                send_message("Rezultatet:\n" + "\n".join(files), addr)
+
+            elif msg == "exit":
+                with lock:
+                    if addr in clients:
+                      del clients[addr]
+                send_message("U shkëpute nga serveri.", addr)
+                print(f"{addr} u shkëput.")
