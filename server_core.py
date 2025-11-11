@@ -24,3 +24,6 @@ def handle_messages():
             clients[addr]['bytes'] += len(data)
 
             log_message(addr, msg)
+            if msg.startswith("/list"):
+                files = os.listdir(".")
+                send_message("\n".join(files), addr)
