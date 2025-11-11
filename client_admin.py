@@ -8,4 +8,13 @@ server_address = (SERVER_IP, SERVER_PORT)
 print("Klient ADMIN u lidh me serverin.")
 print("Komandat: /list, /read, /delete, /search, STATS, exit")
 
+while True:
+      msg = input(">> ")
+      client.sendto(msg.encode(), server_address)
+      data, _ = client.recvfrom(4096)
+      print(data.decode())
 
+      if msg == "exit":
+            break
+
+      client.close()
