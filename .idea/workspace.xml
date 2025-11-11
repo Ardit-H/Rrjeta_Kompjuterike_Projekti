@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client_admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client_redonly.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server_core.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server_monitor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server_setup.py" afterDir="false" />
+    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client_redonly.py" beforeDir="false" afterPath="$PROJECT_DIR$/client_readonly.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,34 +23,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Ardit-H"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Ardit-H&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ardit-H/Rrjeta_Kompjuterike_Projekti.git",
-    "accountId": "5e6a43b1-b80c-40f8-93fb-ba81bf08b78e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ardit-H/Rrjeta_Kompjuterike_Projekti.git&quot;,
+    &quot;accountId&quot;: &quot;5e6a43b1-b80c-40f8-93fb-ba81bf08b78e&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="356wjPXjyylPf0kwIwJQ5gCdxBO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,6 +67,31 @@
       <option name="presentableId" value="Default" />
       <updated>1762443963837</updated>
     </task>
+    <task id="LOCAL-00001" summary="Krijimi i file-ve">
+      <option name="closed" value="true" />
+      <created>1762444388210</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762444388210</updated>
+    </task>
+    <task id="LOCAL-00002" summary="testim">
+      <option name="closed" value="true" />
+      <created>1762444441915</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762444441915</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change">
+      <option name="closed" value="true" />
+      <created>1762444478165</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762444478165</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,5 +104,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Krijimi i file-ve" />
+    <MESSAGE value="testim" />
+    <MESSAGE value="change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change" />
   </component>
 </project>
