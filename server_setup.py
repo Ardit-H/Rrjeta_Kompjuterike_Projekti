@@ -10,7 +10,6 @@ TIMEOUT = 60
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server.bind((SERVER_IP, SERVER_PORT))
 print(f"Serveri u startua në {SERVER_IP}:{SERVER_PORT}")
-
 clients = {}
 lock = threading.Lock()
 
