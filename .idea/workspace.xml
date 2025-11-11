@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="shtese">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Add file deletion command with permission check and user notifications">
       <change beforePath="$PROJECT_DIR$/server_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_core.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +38,6 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="356wjPXjyylPf0kwIwJQ5gCdxBO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -107,13 +105,13 @@
       <option name="project" value="LOCAL" />
       <updated>1762890600179</updated>
     </task>
-    <task id="LOCAL-00005" summary="shtese">
+    <task id="LOCAL-00005" summary="Add file deletion command with permission check and user notifications">
       <option name="closed" value="true" />
-      <created>1762890861356</created>
+      <created>1762891491736</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1762890861356</updated>
+      <updated>1762891491736</updated>
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
@@ -137,7 +135,7 @@
     <MESSAGE value="Add client activity tracking and message logging" />
     <MESSAGE value="Implement /list command to display available files" />
     <MESSAGE value="Implement /read command with file existence check and partial read" />
-    <MESSAGE value="shtese" />
-    <option name="LAST_COMMIT_MESSAGE" value="shtese" />
+    <MESSAGE value="Add file deletion command with permission check and user notifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add file deletion command with permission check and user notifications" />
   </component>
 </project>
