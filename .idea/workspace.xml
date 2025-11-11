@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="change">
+    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Vazhdim ne server_setup.py">
+      <change beforePath="$PROJECT_DIR$/.idea/Rrjeta_Kompjuterike_Projekti.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Rrjeta_Kompjuterike_Projekti.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_redonly.py" beforeDir="false" afterPath="$PROJECT_DIR$/client_readonly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,31 +70,15 @@
       <option name="presentableId" value="Default" />
       <updated>1762443963837</updated>
     </task>
-    <task id="LOCAL-00001" summary="Krijimi i file-ve">
+    <task id="LOCAL-00001" summary="Vazhdim ne server_setup.py">
       <option name="closed" value="true" />
-      <created>1762444388210</created>
+      <created>1762888352480</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1762444388210</updated>
+      <updated>1762888352480</updated>
     </task>
-    <task id="LOCAL-00002" summary="testim">
-      <option name="closed" value="true" />
-      <created>1762444441915</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1762444441915</updated>
-    </task>
-    <task id="LOCAL-00003" summary="change">
-      <option name="closed" value="true" />
-      <created>1762444478165</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1762444478165</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,9 +93,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Krijimi i file-ve" />
-    <MESSAGE value="testim" />
-    <MESSAGE value="change" />
-    <option name="LAST_COMMIT_MESSAGE" value="change" />
+    <MESSAGE value="Vazhdim ne server_setup.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vazhdim ne server_setup.py" />
   </component>
 </project>
