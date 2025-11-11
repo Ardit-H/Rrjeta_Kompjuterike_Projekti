@@ -7,3 +7,14 @@ server_address = (SERVER_IP, SERVER_PORT)
 
 print("Klient READ-ONLY u lidh me serverin.")
 print("Komandat: /list, /read, /search, exit")
+
+while True:
+      msg = input(">> ")
+      client.sendto(msg.encode(), server_address)
+      data, _ = client.recvfrom(4096)
+      print(data.decode())
+
+      if msg == "exit":
+         break
+
+      client.close()
