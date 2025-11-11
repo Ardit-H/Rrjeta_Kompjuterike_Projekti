@@ -40,3 +40,5 @@ def handle_messages():
                 with open(filename, "r", errors="ignore") as f:
                     content = f.read(300)
                 send_message(f"Përmbajtja e {filename}:\n{content}", addr)
+            elif msg.startswith("/delete"):
+                if clients[addr]['privilege'] != "admin":
