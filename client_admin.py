@@ -1,27 +1,27 @@
 import socket
 import time
-
-SERVER_IP = "127.0.0.1"
-SERVER_PORT = 5555
+from client_config import get_server_ip, test_connection
 
 def admin_client():
-    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    SERVER_IP, SERVER_PORT = get_server_ip()
     server_address = (SERVER_IP, SERVER_PORT)
 
-    try:
-        client.sendto("ping".encode(), server_address)
-        client.settimeout(5)
-        data, _ = client.recvfrom(4096)
-        client.settimeout(None)
-    except:
-        print("Nuk mund të lidhem me serverin!")
+    print(f"Duke u lidhur me serverin {SERVER_IP}:{SERVER_PORT}...")
+
+    if not test_connection(SERVER_IP, SERVER_PORT):
+        print(f"❌ Nuk mund të lidhem me serverin {SERVER_IP}:{SERVER_PORT}!")
+        print("Kontrollo:")
+        print("1. A është serveri i startuar?")
+        print("2. A është IP-ja e saktë?")
+        print("3. A janë të ndryshme firewall settings?")
         return
 
-    print("Klient ADMIN u lidh me serverin.")
+    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+    print("✅ Klient ADMIN u lidh me serverin.")
     print(
         "Komandat: /list, /read <file>, /upload <file>, /download <file>, /delete <file>, /search <keyword>, /info <file>, STATS, exit")
     print("-" * 50)
-
     while True:
         try:
             msg = input(">> ").strip()
@@ -54,6 +54,7 @@ def admin_client():
             break
 
     client.close()
+    print("Lidhja u mbyll.")
 
 if __name__ == "__main__":
     admin_client()
