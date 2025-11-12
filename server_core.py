@@ -37,9 +37,13 @@ def handle_messages():
                 send_message(stats, addr)
                 continue
 
-            if msg.startswith("/list"):
-                files = os.listdir(".")
-                send_message("\n".join(files), addr)
+            elif msg.startswith("/list"):
+                try:
+                    files = os.listdir(".")
+                    file_list = "\n".join(files) if files else "Directory është bosh"
+                    send_message(file_list, addr)
+                except Exception as e:
+                     send_message(f"Gabim gjatë listimit: {str(e)}", addr)
 
             elif msg.startswith("/read"):
                 parts = msg.split(" ", 1)
@@ -50,9 +54,13 @@ def handle_messages():
                 if not os.path.exists(filename):
                     send_message("File nuk ekziston.", addr)
                     continue
-                with open(filename, "r", errors="ignore") as f:
-                    content = f.read(300)
-                send_message(f"Përmbajtja e {filename}:\n{content}", addr)
+                try:
+                    with open(filename, "r", encoding="utf-8", errors="ignore") as f:
+                        content = f.read(1000)
+                    send_message(f"Përmbajtja e {filename}:\n{content}", addr)
+                except Exception as e:
+                    send_message(f"Gabim gjatë leximit: {str(e)}", addr)
+
             elif msg.startswith("/delete"):
                 if clients[addr]['privilege'] != "admin":
                     send_message("Nuk ke privilegje për këtë komandë.", addr)

@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="shtese">
-      <change beforePath="$PROJECT_DIR$/.idea/Rrjeta_Kompjuterike_Projekti.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Rrjeta_Kompjuterike_Projekti.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/client_admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_readonly.py" beforeDir="false" afterPath="$PROJECT_DIR$/client_readonly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_core.py" afterDir="false" />
-    </list>
+    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="shtimi i pjeses per STATS ne server_core.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -189,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762891491736</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="shtimi i pjeses per STATS ne server_core.py">
+      <option name="closed" value="true" />
+      <created>1762960120263</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762960120263</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +213,7 @@
     <MESSAGE value="Implement /list command to display available files" />
     <MESSAGE value="Implement /read command with file existence check and partial read" />
     <MESSAGE value="Add file deletion command with permission check and user notifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add file deletion command with permission check and user notifications" />
+    <MESSAGE value="shtimi i pjeses per STATS ne server_core.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="shtimi i pjeses per STATS ne server_core.py" />
   </component>
 </project>
