@@ -97,10 +97,13 @@ def handle_messages():
                     send_message(f"Gabim gjatë kërkimit: {str(e)}", addr)
 
             elif msg.startswith("/upload "):
+                if clients[addr]['privilege'] != "admin":
+                    send_message("Nuk ke privilegje për këtë komandë.", addr)
+                    continue
+
                 filename = msg.split(" ", 1)[1]
-                send_message(f"Serveri pret për ngarkimin e file-it '{filename}'.", addr)
-                send_message("Dërgo përmbajtjen e file-it si tekst menjëherë pas kësaj komande.", addr)
-                clients[addr]["awaiting_upload"] = filename  # ruaj gjendjen e klientit
+                clients[addr]["awaiting_upload"] = filename
+                send_message(f"READY_UPLOAD:{filename}", addr)
 
             elif addr in clients and "awaiting_upload" in clients[addr]:
                 filename = clients[addr].pop("awaiting_upload")
