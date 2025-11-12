@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Ndryshim tek client_admin.py">
-      <change beforePath="$PROJECT_DIR$/client_readonly.py" beforeDir="false" afterPath="$PROJECT_DIR$/client_readonly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
