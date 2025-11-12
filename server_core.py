@@ -3,13 +3,15 @@ import time
 from server_setup import server, clients, lock, MAX_CLIENTS, log_message
 
 def send_message(message, addr):
-    server.sendto(message.encode(), addr)
+    server.sendto(message.encode('utf-8'), addr)
 
 def handle_messages():
     while True:
-        data, addr = server.recvfrom(4096)
-        msg = data.decode().strip()
-        with lock:
+        try:
+           data, addr = server.recvfrom(4096)
+           msg = data.decode('utf-8').strip()
+
+           with lock:
             if addr not in clients:
                 if len(clients) >= MAX_CLIENTS:
                     send_message("Serveri është plot.", addr)
