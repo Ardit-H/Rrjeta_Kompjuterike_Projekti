@@ -142,3 +142,20 @@ def handle_messages():
                         send_message(f"Gabim gjatë marrjes së info: {str(e)}", addr)
                 else:
                     send_message(f"File '{filename}' nuk ekziston në server.", addr)
+
+            elif msg == "exit":
+                if addr in clients:
+                    del clients[addr]
+                send_message("U shkëpute nga serveri.", addr)
+                print(f"{addr} u shkëput.")
+
+                # Mesazh i thjeshtë
+            else:
+                send_message(f"Serveri pranoi mesazhin: {msg}", addr)
+
+        except Exception as e:
+            print(f"Gabim në handle_messages: {e}")
+
+
+if __name__ == "__main__":
+    handle_messages()
