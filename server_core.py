@@ -82,16 +82,19 @@ def handle_messages():
                     send_message("File nuk ekziston.", addr)
 
             elif msg.startswith("/search"):
-                keyword = msg.split(" ", 1)[1] if " " in msg else ""
-                files = [f for f in os.listdir(".") if keyword.lower() in f.lower()]
-                send_message("Rezultatet:\n" + "\n".join(files), addr)
+                parts = msg.split(" ", 1)
+                if len(parts) < 2:
+                    send_message("Përdorimi: /search <keyword>", addr)
+                    continue
 
-            elif msg == "exit":
-                with lock:
-                    if addr in clients:
-                      del clients[addr]
-                send_message("U shkëpute nga serveri.", addr)
-                print(f"{addr} u shkëput.")
+                keyword = parts[1]
+                try:
+                    files = [f for f in os.listdir(".") if keyword.lower() in f.lower()]
+                    result = "Rezultatet:\n" + "\n".join(
+                        files) if files else "Nuk u gjet asnjë file me këtë keyword"
+                    send_message(result, addr)
+                except Exception as e:
+                    send_message(f"Gabim gjatë kërkimit: {str(e)}", addr)
 
             elif msg.startswith("/upload "):
                 filename = msg.split(" ", 1)[1]
