@@ -12,11 +12,17 @@ def handle_messages():
         with lock:
             if addr not in clients:
                 if len(clients) >= MAX_CLIENTS:
-                    send_message("Serveri është plot.", addr)
+                    send_message("Serveri është plot. Ju lutem provoni përsëri më vonë.", addr)
                     continue
 
                 privilege = "admin" if len(clients) == 0 else "read"
-                clients[addr] = {"last_active": time.time(), "messages": 0, "bytes": 0, "privilege": privilege}
+                clients[addr] = {
+                    "last_active": time.time(),
+                    "messages": 0,
+                    "bytes": 0,
+                    "privilege": privilege,
+                    "awaiting_upload": None
+                }
                 print(f"Klient i ri: {addr} (privilege: {privilege})")
 
             clients[addr]['last_active'] = time.time()
@@ -24,6 +30,13 @@ def handle_messages():
             clients[addr]['bytes'] += len(data)
 
             log_message(addr, msg)
+
+            if msg.upper() == "STATS":
+                from server_monitor import get_stats
+                stats = get_stats()
+                send_message(stats, addr)
+                continue
+
             if msg.startswith("/list"):
                 files = os.listdir(".")
                 send_message("\n".join(files), addr)
@@ -63,3 +76,34 @@ def handle_messages():
                       del clients[addr]
                 send_message("U shkëpute nga serveri.", addr)
                 print(f"{addr} u shkëput.")
+
+            elif msg.startswith("/upload "):
+                filename = msg.split(" ", 1)[1]
+                send_message(f"Serveri pret për ngarkimin e file-it '{filename}'.", addr)
+                send_message("Dërgo përmbajtjen e file-it si tekst menjëherë pas kësaj komande.", addr)
+                clients[addr]["awaiting_upload"] = filename  # ruaj gjendjen e klientit
+
+            elif addr in clients and "awaiting_upload" in clients[addr]:
+                filename = clients[addr].pop("awaiting_upload")
+                with open(filename, "w", encoding="utf-8") as f:
+                    f.write(msg)
+                send_message(f"File '{filename}' u ngarkua me sukses në server.", addr)
+
+            elif msg.startswith("/download "):
+                filename = msg.split(" ", 1)[1]
+                try:
+                    with open(filename, "r", encoding="utf-8") as f:
+                        content = f.read()
+                    send_message(f"📦 Përmbajtja e file-it '{filename}':\n{content}", addr)
+                except FileNotFoundError:
+                    send_message(f"❌ File '{filename}' nuk u gjet në server.", addr)
+
+            elif msg.startswith("/info "):
+                filename = msg.split(" ", 1)[1]
+                if os.path.exists(filename):
+                    size = os.path.getsize(filename)
+                    last_modified = time.ctime(os.path.getmtime(filename))
+                    send_message(f"ℹ️ Info për '{filename}':\n- Madhësia: {size} bytes\n- Modifikuar: {last_modified}",
+                                 addr)
+                else:
+                    send_message(f"❌ File '{filename}' nuk ekziston në server.", addr)
