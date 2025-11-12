@@ -149,13 +149,11 @@ def handle_messages():
                 send_message("U shkëpute nga serveri.", addr)
                 print(f"{addr} u shkëput.")
 
-                # Mesazh i thjeshtë
             else:
                 send_message(f"Serveri pranoi mesazhin: {msg}", addr)
 
         except Exception as e:
             print(f"Gabim në handle_messages: {e}")
-
 
 if __name__ == "__main__":
     handle_messages()
