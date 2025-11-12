@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Add STATS and EXIT commands to server console" />
+    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Ndryshim tek client_admin.py">
+      <change beforePath="$PROJECT_DIR$/client_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/client_admin.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,23 +121,7 @@
       <option name="project" value="LOCAL" />
       <updated>1762959711351</updated>
     </task>
-    <task id="LOCAL-00007" summary="Ndryshim tek client_admin.py">
-      <option name="closed" value="true" />
-      <created>1762960028341</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1762960028341</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Add STATS and EXIT commands to server console">
-      <option name="closed" value="true" />
-      <created>1762960860014</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1762960860014</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +145,6 @@
     <MESSAGE value="Implement /read command with file existence check and partial read" />
     <MESSAGE value="Add file deletion command with permission check and user notifications" />
     <MESSAGE value="Ndryshim tek client_admin.py" />
-    <MESSAGE value="Add STATS and EXIT commands to server console" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add STATS and EXIT commands to server console" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ndryshim tek client_admin.py" />
   </component>
 </project>
