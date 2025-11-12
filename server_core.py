@@ -107,27 +107,53 @@ def handle_messages():
                 clients[addr]["awaiting_upload"] = filename
                 send_message(f"READY_UPLOAD:{filename}", addr)
 
-            elif addr in clients and "awaiting_upload" in clients[addr]:
+
+            elif clients[addr].get("awaiting_upload"):
                 filename = clients[addr].pop("awaiting_upload")
-                with open(filename, "w", encoding="utf-8") as f:
-                    f.write(msg)
-                send_message(f"File '{filename}' u ngarkua me sukses në server.", addr)
+                try:
+                    with open(filename, "w", encoding="utf-8") as f:
+                        f.write(msg)
+                    send_message(f"File '{filename}' u ngarkua me sukses në server.", addr)
+                except Exception as e:
+                    send_message(f"Gabim gjatë upload-it: {str(e)}", addr)
 
             elif msg.startswith("/download "):
                 filename = msg.split(" ", 1)[1]
                 try:
                     with open(filename, "r", encoding="utf-8") as f:
                         content = f.read()
-                    send_message(f"📦 Përmbajtja e file-it '{filename}':\n{content}", addr)
+                    send_message(f"FILE_CONTENT:{filename}\n{content}", addr)
                 except FileNotFoundError:
-                    send_message(f"❌ File '{filename}' nuk u gjet në server.", addr)
+                    send_message(f"ERROR: File '{filename}' nuk u gjet në server.", addr)
+                except Exception as e:
+                    send_message(f"ERROR: {str(e)}", addr)
 
             elif msg.startswith("/info "):
                 filename = msg.split(" ", 1)[1]
                 if os.path.exists(filename):
-                    size = os.path.getsize(filename)
-                    last_modified = time.ctime(os.path.getmtime(filename))
-                    send_message(f"ℹ️ Info për '{filename}':\n- Madhësia: {size} bytes\n- Modifikuar: {last_modified}",
-                                 addr)
+                    try:
+                        size = os.path.getsize(filename)
+                        created = time.ctime(os.path.getctime(filename))
+                        modified = time.ctime(os.path.getmtime(filename))
+                        send_message(
+                            f"ℹ️ Info për '{filename}':\n- Madhësia: {size} bytes\n- Krijuar: {created}\n- Modifikuar: {modified}", addr)
+
+                    except Exception as e:
+                        send_message(f"Gabim gjatë marrjes së info: {str(e)}", addr)
                 else:
-                    send_message(f"❌ File '{filename}' nuk ekziston në server.", addr)
+                    send_message(f"File '{filename}' nuk ekziston në server.", addr)
+
+            elif msg == "exit":
+                if addr in clients:
+                    del clients[addr]
+                send_message("U shkëpute nga serveri.", addr)
+                print(f"{addr} u shkëput.")
+
+            else:
+                send_message(f"Serveri pranoi mesazhin: {msg}", addr)
+
+        except Exception as e:
+            print(f"Gabim në handle_messages: {e}")
+
+if __name__ == "__main__":
+    handle_messages()
