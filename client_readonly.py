@@ -1,21 +1,24 @@
 import socket
+import time
 
-SERVER_IP = "192.168.1.100"
+SERVER_IP = "127.0.0.1"
 SERVER_PORT = 5555
-client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-server_address = (SERVER_IP, SERVER_PORT)
 
-print("Klient READ-ONLY u lidh me serverin.")
-print("Komandat: /list, /read, /search, exit")
+def readonly_client():
+    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    server_address = (SERVER_IP, SERVER_PORT)
 
-while True:
-      msg = input(">> ")
-      client.sendto(msg.encode(), server_address)
-      data, _ = client.recvfrom(4096)
-      print(data.decode())
+    try:
+        client.sendto("ping".encode(), server_address)
+        client.settimeout(5)
+        data, _ = client.recvfrom(4096)
+        client.settimeout(None)
+    except:
+        print("Nuk mund të lidhem me serverin!")
+        return
 
-      if msg == "exit":
-         break
+    print("Klient READ-ONLY u lidh me serverin.")
+    print("Komandat: /list, /read, /search <keyword>, /info <file>, STATS, exit")
+    print("-" * 50)
 
-      client.close()
 

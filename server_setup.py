@@ -14,20 +14,19 @@ clients = {}
 lock = threading.Lock()
 
 def log_message(addr, msg):
-    with open("messages_log.txt", "a") as f:
+    with open("messages_log.txt", "a", encoding="utf-8") as f:
         f.write(f"[{time.ctime()}] {addr}: {msg}\n")
 
-    def check_timeouts():
-        while True:
-            time.sleep(10)
+def check_timeouts():
+    while True:
+        time.sleep(10)
+        now = time.time()
+        with lock:
+              inactive = [addr for addr, info in
+clients.items() if now - info['last_active'] > TIMEOUT]
+        for addr in inactive:
+                print(f"Klienti {addr} u shkëput për shkak të inaktivitetit.")
+                del clients[addr]
 
-
-now = time.time()
-with lock:
-    inactive = [addr for addr, info in clients.items() if now - info['last_active'] > TIMEOUT]
-    for addr in inactive:
-        print(f"Klienti {addr} u shkëput për shkak të inaktivitetit.")
-        del clients[addr]
-
-
-
+timeout_thread = threading.Thread(target=check_timeouts, daemon=True)
+timeout_thread.start()
