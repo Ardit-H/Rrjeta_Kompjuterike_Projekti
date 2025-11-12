@@ -9,7 +9,12 @@ TIMEOUT = 60
 
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server.bind((SERVER_IP, SERVER_PORT))
-print(f"Serveri u startua në {SERVER_IP}:{SERVER_PORT}")
+
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+print(f"Serveri u startua në {local_ip}:{SERVER_PORT}")
+print(f"Dëgjon në të gjitha interfacet: {SERVER_IP}:{SERVER_PORT}")
+
 clients = {}
 lock = threading.Lock()
 

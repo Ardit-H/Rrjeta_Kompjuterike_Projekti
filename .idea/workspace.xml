@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Fshirja e hapsirave te panevojshme">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Exit dhe mesazhet qe pranon serveri">
+      <change beforePath="$PROJECT_DIR$/server_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_core.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,15 +145,7 @@
       <option name="project" value="LOCAL" />
       <updated>1762962404421</updated>
     </task>
-    <task id="LOCAL-00010" summary="Fshirja e hapsirave te panevojshme">
-      <option name="closed" value="true" />
-      <created>1762962501402</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1762962501402</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +172,6 @@
     <MESSAGE value="Perpunimi i upload-it" />
     <MESSAGE value="Permiresimi i komandes Info" />
     <MESSAGE value="Exit dhe mesazhet qe pranon serveri" />
-    <MESSAGE value="Fshirja e hapsirave te panevojshme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fshirja e hapsirave te panevojshme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exit dhe mesazhet qe pranon serveri" />
   </component>
 </project>
