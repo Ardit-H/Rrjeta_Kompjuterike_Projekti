@@ -66,10 +66,18 @@ def handle_messages():
                     send_message("Nuk ke privilegje për këtë komandë.", addr)
                     continue
 
-                filename = msg.split(" ", 1)[1]
+                parts = msg.split(" ", 1)
+                if len(parts) < 2:
+                    send_message("Përdorimi: /delete <filename>", addr)
+                    continue
+
+                filename = parts[1]
                 if os.path.exists(filename):
-                    os.remove(filename)
-                    send_message(f"File '{filename}' u fshi.", addr)
+                    try:
+                        os.remove(filename)
+                        send_message(f"File '{filename}' u fshi.", addr)
+                    except Exception as e:
+                        send_message(f"Gabim gjatë fshirjes: {str(e)}", addr)
                 else:
                     send_message("File nuk ekziston.", addr)
 
