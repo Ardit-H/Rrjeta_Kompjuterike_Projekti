@@ -2,6 +2,16 @@ import socket
 import threading
 import time
 
+def get_local_ip():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+        s.close()
+        return ip
+    except:
+        return "0.0.0.0"
+
 SERVER_IP = "0.0.0.0"
 SERVER_PORT = 5555
 MAX_CLIENTS = 4
