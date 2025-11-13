@@ -18,7 +18,7 @@ def handle_messages():
                     send_message("Serveri është plot. Ju lutem provoni përsëri më vonë.", addr)
                     continue
 
-                privilege = "admin" if len(clients) == 0 else "read"
+                privilege = "admin" if msg == "/admin_login" else "read"
                 clients[addr] = {
                     "last_active": time.time(),
                     "messages": 0,
