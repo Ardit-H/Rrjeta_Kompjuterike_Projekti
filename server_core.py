@@ -1,5 +1,6 @@
 import os
 import time
+import base64
 from server_setup import server, clients, lock, MAX_CLIENTS, log_message
 
 def send_message(message, addr):
@@ -8,7 +9,7 @@ def send_message(message, addr):
 def handle_messages():
     while True:
         try:
-           data, addr = server.recvfrom(4096)
+           data, addr = server.recvfrom(65536)
            msg = data.decode('utf-8').strip()
 
            with lock:
@@ -23,7 +24,8 @@ def handle_messages():
                     "messages": 0,
                     "bytes": 0,
                     "privilege": privilege,
-                    "awaiting_upload": None
+                    "awaiting_upload": None,
+                    "upload_filename": None
                 }
                 print(f"Klient i ri: {addr} (privilege: {privilege})")
 
@@ -63,6 +65,26 @@ def handle_messages():
                 except Exception as e:
                     send_message(f"Gabim gjatë leximit: {str(e)}", addr)
 
+            elif msg.startswith("/write"):
+                if clients[addr]['privilege'] != "admin":
+                    send_message("Nuk ke privilegje për këtë komandë.", addr)
+                    continue
+
+                parts = msg.split(" ", 2)
+                if len(parts) < 3:
+                    send_message("Përdorimi: /write <filename> <content>", addr)
+                    continue
+
+                filename = parts[1]
+                content = parts[2]
+
+                try:
+                    with open(filename, "w", encoding="utf-8") as f:
+                        f.write(content)
+                    send_message(f"File '{filename}' u shkrua me sukses.", addr)
+                except Exception as e:
+                    send_message(f"Gabim gjatë shkrimit: {str(e)}", addr)
+
             elif msg.startswith("/delete"):
                 if clients[addr]['privilege'] != "admin":
                     send_message("Nuk ke privilegje për këtë komandë.", addr)
@@ -98,33 +120,42 @@ def handle_messages():
                 except Exception as e:
                     send_message(f"Gabim gjatë kërkimit: {str(e)}", addr)
 
+
             elif msg.startswith("/upload "):
                 if clients[addr]['privilege'] != "admin":
                     send_message("Nuk ke privilegje për këtë komandë.", addr)
                     continue
-
-                filename = msg.split(" ", 1)[1]
-                clients[addr]["awaiting_upload"] = filename
-                send_message(f"READY_UPLOAD:{filename}", addr)
-
-
-            elif clients[addr].get("awaiting_upload"):
-                filename = clients[addr].pop("awaiting_upload")
+                parts = msg.split(" ", 2)
+                if len(parts) < 3:
+                    send_message("Përdorimi: /upload <filename> <filedata_base64>", addr)
+                    continue
+                filename = parts[1]
+                encoded_data = parts[2]
                 try:
-                    with open(filename, "w", encoding="utf-8") as f:
-                        f.write(msg)
-                    send_message(f"File '{filename}' u ngarkua me sukses në server.", addr)
+                    file_data = base64.b64decode(encoded_data)
+                    with open(filename, "wb") as f:
+                        f.write(file_data)
+                    send_message(f"SUCCESS: File '{filename}' u ngarkua me sukses në server.", addr)
                 except Exception as e:
-                    send_message(f"Gabim gjatë upload-it: {str(e)}", addr)
+                    send_message(f"ERROR: Gabim gjatë upload-it: {str(e)}", addr)
+
 
             elif msg.startswith("/download "):
                 filename = msg.split(" ", 1)[1]
                 try:
-                    with open(filename, "r", encoding="utf-8") as f:
-                        content = f.read()
-                    send_message(f"FILE_CONTENT:{filename}\n{content}", addr)
-                except FileNotFoundError:
-                    send_message(f"ERROR: File '{filename}' nuk u gjet në server.", addr)
+                    if not os.path.exists(filename):
+                        send_message(f"ERROR: File '{filename}' nuk u gjet në server.", addr)
+                        continue
+
+                    with open(filename, "rb") as f:
+                        file_content = f.read()
+                    encoded_content = base64.b64encode(file_content).decode('utf-8')
+                    if len(encoded_content) > 50000:
+                        send_message("FILE_LARGE:File-i është shumë i madh për download", addr)
+                    else:
+                        send_message(f"FILE_CONTENT:{filename}:{encoded_content}", addr)
+
+
                 except Exception as e:
                     send_message(f"ERROR: {str(e)}", addr)
 
@@ -150,7 +181,12 @@ def handle_messages():
                 print(f"{addr} u shkëput.")
 
             else:
-                send_message(f"Serveri pranoi mesazhin: {msg}", addr)
+                if clients[addr]['privilege'] == "admin":
+                    send_message(f"Serveri pranoi mesazhin: {msg}", addr)
+                else:
+                    send_message(
+                        "Komandë e pavlefshme. Komandat e lejuara: /read, /list, /search, /info, /download, exit",
+                        addr)
 
         except Exception as e:
             print(f"Gabim në handle_messages: {e}")
