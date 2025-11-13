@@ -12,18 +12,15 @@ def get_local_ip():
     except:
         return "0.0.0.0"
 
-SERVER_IP = "0.0.0.0"
+SERVER_IP = get_local_ip()
 SERVER_PORT = 5555
 MAX_CLIENTS = 4
 TIMEOUT = 60
 
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server.bind((SERVER_IP, SERVER_PORT))
-
-hostname = socket.gethostname()
-local_ip = socket.gethostbyname(hostname)
-print(f"Serveri u startua në {local_ip}:{SERVER_PORT}")
-print(f"Dëgjon në të gjitha interfacet: {SERVER_IP}:{SERVER_PORT}")
+print(f"🚀 Serveri u startua në {SERVER_IP}:{SERVER_PORT}")
+print(f"📡 Klientët mund të lidhen duke përdorur këtë IP")
 
 clients = {}
 lock = threading.Lock()
