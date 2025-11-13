@@ -1,0 +1,7 @@
+[Wed Nov 12 16:54:37 2025] ('127.0.0.1', 57572): ping
+[Wed Nov 12 16:56:45 2025] ('127.0.0.1', 57572): exit
+[Thu Nov 13 11:04:58 2025] ('127.0.0.1', 54244): ping
+[Thu Nov 13 11:06:30 2025] ('127.0.0.1', 54244): /upload rrjetatest.txt
+[Thu Nov 13 11:07:31 2025] ('127.0.0.1', 54244): /download C:\Users\Admin\Download\messagees_log.txt
+[Thu Nov 13 11:07:49 2025] ('127.0.0.1', 54244): /download messagees_log.txt
+[Thu Nov 13 11:08:08 2025] ('127.0.0.1', 54244): /download messages_log.txt
