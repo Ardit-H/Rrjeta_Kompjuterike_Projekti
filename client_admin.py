@@ -104,7 +104,7 @@ def admin_client():
     server_address = (SERVER_IP, SERVER_PORT)
 
     try:
-        client.sendto("ping".encode(), server_address)
+        client.sendto("/admin_login".encode(), server_address)
         client.settimeout(5)
         data, _ = client.recvfrom(4096)
         client.settimeout(None)

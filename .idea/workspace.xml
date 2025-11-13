@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91226154-e001-48cb-bb6f-00d154b0ac53" name="Changes" comment="Ndryshim tek client_admin.py">
-      <change afterPath="$PROJECT_DIR$/client_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Rrjeta_Kompjuterike_Projekti.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Rrjeta_Kompjuterike_Projekti.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/client_admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client_readonly.py" beforeDir="false" afterPath="$PROJECT_DIR$/client_readonly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/messages_log.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +39,6 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="356wjPXjyylPf0kwIwJQ5gCdxBO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

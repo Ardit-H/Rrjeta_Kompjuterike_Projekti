@@ -49,3 +49,16 @@
 [Wed Nov 12 23:35:39 2025] ('10.180.60.34', 57775): test
 [Wed Nov 12 23:40:56 2025] ('127.0.0.1', 59713): STATS
 [Wed Nov 12 23:46:02 2025] ('10.180.60.34', 60726): STATS
+[Thu Nov 13 15:43:52 2025] ('172.20.10.2', 53208): ping
+[Thu Nov 13 15:44:13 2025] ('172.20.10.5', 55635): ping
+[Thu Nov 13 15:44:29 2025] ('172.20.10.6', 55575): ping
+[Thu Nov 13 15:44:43 2025] ('172.20.10.6', 50962): ping
+[Thu Nov 13 16:23:32 2025] ('172.16.110.61', 52974): ping
+[Thu Nov 13 16:25:33 2025] ('172.16.110.61', 49753): ping
+[Thu Nov 13 16:25:42 2025] ('172.16.110.61', 49753): /upload r.txt
+[Thu Nov 13 16:29:06 2025] ('172.16.110.61', 60294): ping
+[Thu Nov 13 16:29:08 2025] ('172.16.110.61', 60294): i bana permirsimet qe mi dhae.A mund ta rregullosh edhe pjesen qe admin te jen ata qe e ekzekutojne filen client_admin.py dhe ne kete rast ne server te del qe ky klient e ka privilegjin admin ndersa te tjeret qe e ekzekutojne client_readoly.py te jene readonly. Dhe te mos jete ky kusht (privilege = "admin" if len(clients) == 0 else "read") pra jo vetem useri i par te kyqet si admin.  import os
+[Thu Nov 13 16:30:56 2025] ('172.16.110.61', 51697): ping
+[Thu Nov 13 16:31:31 2025] ('172.16.110.61', 51697): /upload r.txt
+[Thu Nov 13 16:33:25 2025] ('172.20.10.2', 53748): ping
+[Thu Nov 13 16:33:51 2025] ('172.20.10.2', 53748): /upload TestRrjeta.txt UGVybWJhanRqZSBwZXIgdGVzdGlt
