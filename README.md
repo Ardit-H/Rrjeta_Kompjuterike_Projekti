@@ -59,7 +59,7 @@ Admin users can execute:
 | `/list`                | List files in a directory |
 | `/read <filename>`     | Read file contents |
 | `/upload <filepath>`   | Upload file to server |
-| `/download <filepath>` | Download a file |
+| `/download <filename>` | Download a file |
 | `/delete <filename>`   | Delete a file |
 | `/search <keyword>`    | Search filenames for a keyword |
 | `/info <filename>`     | Show file size and timestamps |
