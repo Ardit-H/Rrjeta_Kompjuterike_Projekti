@@ -167,7 +167,7 @@ python client_readonly.py
 
 ---
 
-## 🧑‍💻 Authors
+##  Authors
  
 - Dua Gashi
 - Erzana Beqaj
