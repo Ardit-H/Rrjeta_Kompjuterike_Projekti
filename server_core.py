@@ -167,7 +167,7 @@ def handle_messages():
                         created = time.ctime(os.path.getctime(filename))
                         modified = time.ctime(os.path.getmtime(filename))
                         send_message(
-                            f"ℹ️ Info për '{filename}':\n- Madhësia: {size} bytes\n- Krijuar: {created}\n- Modifikuar: {modified}", addr)
+                            f" Info për '{filename}':\n- Madhësia: {size} bytes\n- Krijuar: {created}\n- Modifikuar: {modified}", addr)
 
                     except Exception as e:
                         send_message(f"Gabim gjatë marrjes së info: {str(e)}", addr)

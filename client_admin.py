@@ -4,8 +4,7 @@ import base64
 import os
 
 def get_server_ip():
-    """Pyet për IP-në e serverit"""
-    default_ip = input(f"🔧 Shkruaj IP-në e serverit [Enter për 127.0.0.1]: ").strip()
+    default_ip = input(f" Shkruaj IP-në e serverit [Enter për 127.0.0.1]: ").strip()
     if not default_ip:
         return "127.0.0.1"
     return default_ip
@@ -14,7 +13,6 @@ SERVER_IP = get_server_ip()
 SERVER_PORT = 5555
 
 def upload_file_from_pc(client, server_address, file_path):
-    """Mer file nga PC dhe e dërgon në server"""
     try:
         if not os.path.exists(file_path):
             print(f"ERROR: File '{file_path}' nuk ekziston!")
@@ -43,7 +41,6 @@ def upload_file_from_pc(client, server_address, file_path):
         return False
 
 def download_file_to_pc(client, server_address, server_filename, save_path):
-    """Shkarkon file nga server dhe e ruan në PC"""
     try:
         client.sendto(f"/download {server_filename}".encode('utf-8'), server_address)
 
@@ -63,23 +60,22 @@ def download_file_to_pc(client, server_address, server_filename, save_path):
                 with open(save_path, "wb") as f:
                     f.write(file_content)
 
-                print(f"✅ SUCCESS: File '{received_filename}' u shkarkua dhe u ruajt në:")
-                print(f"   📁 {os.path.abspath(save_path)}")
+                print(f" SUCCESS: File '{received_filename}' u shkarkua dhe u ruajt në:")
+                print(f"    {os.path.abspath(save_path)}")
                 return True
             else:
-                print("❌ ERROR: Format i gabuar i përgjigjes nga serveri")
+                print(" ERROR: Format i gabuar i përgjigjes nga serveri")
         elif response.startswith("FILE_LARGE:"):
-            print("❌ ERROR: File-i është shumë i madh për t'u shkarkuar")
+            print(" ERROR: File-i është shumë i madh për t'u shkarkuar")
         else:
-            print(f"❌ {response}")
+            print(f" {response}")
         return False
 
     except Exception as e:
-        print(f"❌ Gabim gjatë download-it: {e}")
+        print(f" Gabim gjatë download-it: {e}")
         return False
 
 def write_to_file(client, server_address, filename, content):
-    """Shkruan content në file në server"""
     try:
         message = f"/write {filename} {content}"
         client.sendto(message.encode('utf-8'), server_address)
@@ -89,11 +85,10 @@ def write_to_file(client, server_address, filename, content):
         print(response)
         return True
     except Exception as e:
-        print(f"❌ Gabim gjatë shkrimit: {e}")
+        print(f" Gabim gjatë shkrimit: {e}")
         return False
 
 def list_server_files(client, server_address):
-    """Liston file-t në server"""
     client.sendto("/list".encode('utf-8'), server_address)
     data, _ = client.recvfrom(65536)
     response = data.decode('utf-8')
@@ -112,8 +107,8 @@ def admin_client():
         print("Nuk mund të lidhem me serverin!")
         return
 
-    print("🚀 Klient ADMIN u lidh me serverin")
-    print("\n📋 KOMANDAT:")
+    print(" Klient ADMIN u lidh me serverin")
+    print("\n KOMANDAT:")
     print("  /upload <path_i_plotë_në_PC>     - Ngarko file nga PC në server")
     print("  /download <filename>             - Shkarko file nga server në PC")
     print("  /write <filename> <content>      - Shkruaj në file në server")
@@ -125,7 +120,7 @@ def admin_client():
     print("  STATS                            - Statistikat e serverit")
     print("  exit                             - Dil")
     print("  <çdo mesazh tjetër>              - Dërgo mesazh të thjeshtë")
-    print(f"\n📁 Folderi aktual në PC: {os.getcwd()}")
+    print(f"\n Folderi aktual në PC: {os.getcwd()}")
     print("-" * 60)
 
     while True:
@@ -145,7 +140,7 @@ def admin_client():
             elif msg.startswith("/download "):
                  server_filename = msg.split(" ", 1)[1].strip()
                  default_save_path = os.path.join(os.getcwd(), server_filename)
-                 save_path = input(f"💾 Ruaj në PC si [Enter për '{default_save_path}']: ").strip()
+                 save_path = input(f" Ruaj në PC si [Enter për '{default_save_path}']: ").strip()
                  if not save_path:
                      save_path = default_save_path
                  download_file_to_pc(client, server_address, server_filename, save_path)
@@ -158,12 +153,12 @@ def admin_client():
                     content = parts[2]
                     write_to_file(client, server_address, filename, content)
                 else:
-                    print("❌ Përdorimi: /write <filename> <content>")
+                    print(" Përdorimi: /write <filename> <content>")
                 continue
 
             elif msg == "/list":
                 files_list = list_server_files(client, server_address)
-                print("📁 File-t në server:")
+                print(" File-t në server:")
                 print(files_list)
                 continue
 
@@ -176,17 +171,17 @@ def admin_client():
             response = data.decode('utf-8')
 
             response_time = (time.time() - start_time) * 1000
-            print(f"⏱️ Përgjigja ({response_time:.2f}ms):")
+            print(f" Përgjigja ({response_time:.2f}ms):")
             print(response)
             print("-" * 50)
         except socket.timeout:
-            print("⏰ Serveri nuk u përgjigj brenda kohës!")
+            print(" Serveri nuk u përgjigj brenda kohës!")
         except KeyboardInterrupt:
-            print("\n👋 Duke u shkëputur...")
+            print("\n Duke u shkëputur...")
             client.sendto("exit".encode(), server_address)
             break
         except Exception as e:
-            print(f"❌ Gabim: {e}")
+            print(f" Gabim: {e}")
             break
 
         client.close()

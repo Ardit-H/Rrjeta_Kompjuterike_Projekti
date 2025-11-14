@@ -19,8 +19,8 @@ TIMEOUT = 60
 
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server.bind((SERVER_IP, SERVER_PORT))
-print(f"🚀 Serveri u startua në {SERVER_IP}:{SERVER_PORT}")
-print(f"📡 Klientët mund të lidhen duke përdorur këtë IP")
+print(f" Serveri u startua në {SERVER_IP}:{SERVER_PORT}")
+print(f" Klientët mund të lidhen duke përdorur këtë IP")
 
 clients = {}
 lock = threading.Lock()
