@@ -54,15 +54,15 @@ The server additionally monitors traffic, logs messages, tracks active connectio
 
 Admin users can execute:
 
-| Command | Description |
-|---------|-------------|
-| `/list` | List files in a directory |
-| `/read <filename>` | Read file contents |
-| `/upload <filename>` | Upload file to server |
-| `/download <filename>` | Download a file |
-| `/delete <filename>` | Delete a file |
-| `/search <keyword>` | Search filenames for a keyword |
-| `/info <filename>` | Show file size and timestamps |
+| Command                | Description |
+|------------------------|-------------|
+| `/list`                | List files in a directory |
+| `/read <filename>`     | Read file contents |
+| `/upload <filepath>`   | Upload file to server |
+| `/download <filepath>` | Download a file |
+| `/delete <filename>`   | Delete a file |
+| `/search <keyword>`    | Search filenames for a keyword |
+| `/info <filename>`     | Show file size and timestamps |
 
 Admin users also receive **faster response time**.
 
@@ -166,6 +166,13 @@ python client_readonly.py
 - Basic understanding of UDP
 
 ---
+
+## 🧑‍💻 Authors
+ 
+- Dua Gashi
+- Erzana Beqaj
+- Anita Cacaj
+- Ardit Hyseni
 
 
 
