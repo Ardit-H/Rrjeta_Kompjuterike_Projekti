@@ -117,7 +117,6 @@ def admin_client():
     print("  /search <keyword>                - Kërko file në server")
     print("  /info <filename>                 - Info për file")
     print("  /read <filename>                 - Lexo file nga server")
-    print("  STATS                            - Statistikat e serverit")
     print("  exit                             - Dil")
     print("  <çdo mesazh tjetër>              - Dërgo mesazh të thjeshtë")
     print(f"\n Folderi aktual në PC: {os.getcwd()}")
@@ -184,7 +183,7 @@ def admin_client():
             print(f" Gabim: {e}")
             break
 
-        client.close()
+    client.close()
 
 if __name__ == "__main__":
     admin_client()
